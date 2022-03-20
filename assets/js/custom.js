@@ -5,3 +5,9 @@ if(document.title != "Beranda") {
     document.querySelector(".navbar").classList.remove("bg-transparent");
     document.querySelector(".navbar").classList.add("bg-dark");
 }
+
+if(document.title == "Cetak") {
+    document.querySelector(".navbar").classList.remove("bg-dark");
+    document.querySelector(".navbar").classList.add("bg-transparent");
+    window.print();
+}
