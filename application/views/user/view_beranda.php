@@ -1,68 +1,84 @@
-<div class="container py-5">
+<div class="container">
     <div class="row">
-        <!-- Cari Kamar -->
-        <div class="col-lg-4 col-md-6 my-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Temukan kamar terbaik kami</h5>
-                    <!-- Form -->
-                    <form action="" method="" class="form mt-4">
-                        <div class="form-floating mb-3">
-                            <input type="date" min="<?= date('Y-m-d'); ?>" class="form-control" id="floatingInput" name="checkIn" placeholder="Check-in">
-                            <label for="floatingInput">Check-in</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="date" min="<?= date('Y-m-d'); ?>" class="form-control" id="floatingInput" name="checkOut" placeholder="Check-Out">
-                            <label for="floatingInput">Check-Out</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect" name="kamar" aria-label="Floating label select example">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                            <label for="floatingSelect">Jumlah Kamar</label>
-                        </div>
-                        <div class="d-grid">
-                            <button class="btn btn-primary" type="submit" name="cari">Cari kamar</button>
-                        </div>
-                    </form>
+        <!-- Divider -->
+        <div class="col-12"><hr></div>
+        <!-- Jumbotron -->
+        <div class="col-12 my-3">
+            <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="<?= base_url('assets/img/image1.png');?>" class="d-block w-100" alt="Hotel">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?= base_url('assets/img/image2.png');?>" class="d-block w-100" alt="Hotel View">
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Keunggulan -->
-        <div class="col-lg-4 col-md-6 offset-lg-4 my-4">
-            <div class="d-flex flex-column bd-highlight gap-4">
-                <!-- 1 -->
-                <div class="card">
-                    <div class="card-header">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M3.161 4.469a6.5 6.5 0 0 1 8.84-.328 6.5 6.5 0 0 1 9.178 9.154l-7.765 7.79a2 2 0 0 1-2.719.102l-.11-.101-7.764-7.791a6.5 6.5 0 0 1 .34-8.826zm1.414 1.414a4.5 4.5 0 0 0-.146 6.21l.146.154L12 19.672l5.303-5.304-3.535-3.535-1.06 1.06a3 3 0 1 1-4.244-4.242l2.102-2.103a4.501 4.501 0 0 0-5.837.189l-.154.146zm8.486 2.828a1 1 0 0 1 1.414 0l4.242 4.242.708-.706a4.5 4.5 0 0 0-6.211-6.51l-.153.146-3.182 3.182a1 1 0 0 0-.078 1.327l.078.087a1 1 0 0 0 1.327.078l.087-.078 1.768-1.768z"/></svg>
+        <!-- Cek Kamar -->
+        <div class="col-12 my-4 offset-md-1 col-md-10">
+            <div class="card shadow-lg border-0">
+                <form class="card-body row gy-3" action="" method="">
+                    <div class="col-12 col-sm col-lg-4 mb-lg-0">
+                        <label for="check_in" class="form-label">Check In</label>
+                        <input type="date" min="<?= date('Y-m-d'); ?>" class="form-control" id="check_in" name="check_in">
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Layanan Terbaik</h5>
-                        <p class="card-text">Anda akan mendapat pelayanan terbaik dari staff kami yang terlatih.</p>
+                    <div class="col-12 col-sm col-lg-4 mb-lg-0">
+                        <label for="check_out" class="form-label">Check Out</label>
+                        <input type="date" min="<?= date('Y-m-d'); ?>" class="form-control" id="check_out" name="check_out">
                     </div>
-                </div>
-                <!-- 2 -->
-                <div class="card">
-                    <div class="card-header">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M3.783 2.826L12 1l8.217 1.826a1 1 0 0 1 .783.976v9.987a6 6 0 0 1-2.672 4.992L12 23l-6.328-4.219A6 6 0 0 1 3 13.79V3.802a1 1 0 0 1 .783-.976zM5 4.604v9.185a4 4 0 0 0 1.781 3.328L12 20.597l5.219-3.48A4 4 0 0 0 19 13.79V4.604L12 3.05 5 4.604zM12 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-4.473 5a4.5 4.5 0 0 1 8.946 0H7.527z"/></svg>
+                    <div class="col col-lg-2 mb-lg-0">
+                        <label for="jumah_kamar" class="form-label">Jumlah Kamar</label>
+                        <input type="number" class="form-control" id="jumah_kamar" name="jumah_kamar" value="1">
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Keamanan Terjamin</h5>
-                        <p class="card-text">Kami memiliki petugas keamanan yang telah diakui oleh militer.</p>
+                    <div class="col col-lg-2 mb-lg-0">
+                        <label class="form-label opacity-0">Button</label>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Cek Kamar</button>
                     </div>
-                </div>
-                <!-- 3 -->
-                <div class="card">
-                    <div class="card-header">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 6.143v12.824l5.065-2.17 6 3L20 17.68V4.857l1.303-.558a.5.5 0 0 1 .697.46V19l-7 3-6-3-6.303 2.701a.5.5 0 0 1-.697-.46V7l2-.857zm12.243 5.1L12 15.485l-4.243-4.242a6 6 0 1 1 8.486 0zM12 12.657l2.828-2.829a4 4 0 1 0-5.656 0L12 12.657z"/></svg>                    
+                </form>
+            </div>
+        </div>
+        <!-- Form Reservasi -->
+        <div class="col-12 my-4 offset-md-1 col-md-10">
+            <!-- Alert -->
+            <div class="alert alert-primary text-center" role="alert">Kamar Kosong Tersedia - Pesan Sekarang !</div>
+            <!-- Form -->
+            <div class="card">
+                <h5 class="card-header">Form Reservasi</h5>
+                <form class="card-body row gy-4" action="" method="">
+                    <div class="col-12">
+                        <label for="nama_pemesan" class="form-label text-muted">Nama Pemesan</label>
+                        <input type="text" class="form-control" id="nama_pemesan" name="nama_pemesan">
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Akses Mudah dan Cepat</h5>
-                        <p class="card-text">Lokasi dekat dengan berbagai tempat hiburan dan pintu Tol.</p>
+                    <div class="col-12">
+                        <label for="nama_tamu" class="form-label text-muted">Nama Tamu</label>
+                        <input type="text" class="form-control" id="nama_tamu" name="nama_tamu">
                     </div>
-                </div>
+                    <div class="col-12 col-sm-6 col-lg-5">
+                        <label for="email" class="form-label text-muted">Email</label>
+                        <input type="text" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <label for="telp" class="form-label text-muted">No. Handphone</label>
+                        <input type="text" class="form-control" id="telp" name="telp">
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <label class="form-label text-muted">Tipe Kamar</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="1">Standar</option>
+                            <option value="2">Deluxe</option>
+                            <option value="3">Superior</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Pesan</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
