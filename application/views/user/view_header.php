@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container-md">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?= base_url();?>">
                 <img src="<?= base_url('assets/logo/logo-black.png');?>" alt="" height="50" >
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,9 +19,9 @@
             </button>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Kamar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Fasilitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url();?>">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('kamar');?>">Kamar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('fasilitas');?>">Fasilitas</a></li>
                 </ul>
             </div>
         </div>
