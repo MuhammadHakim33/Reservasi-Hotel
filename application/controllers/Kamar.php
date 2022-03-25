@@ -5,9 +5,9 @@ class Kamar extends CI_Controller {
 
 	public function index()
 	{
-		$data["title"] = "Daftar Kamar";
+		$data["title"] = "Kamar";
 		$this->load->view('user/view_header', $data);
-		$this->load->view('user/view_list_kamar');
+		$this->load->view('user/view_kamar');
 		$this->load->view('user/view_footer');
 	}
 }
