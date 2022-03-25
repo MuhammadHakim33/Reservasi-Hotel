@@ -22,6 +22,7 @@
         <!-- Cek Kamar -->
         <div class="col-12 my-4 offset-md-1 col-md-10">
             <div class="card shadow-lg border-0">
+                <div class="card-header text-primary">Cek Kamar</div>
                 <form class="card-body row gy-3" action="" method="">
                     <div class="col-12 col-sm col-lg-4 mb-lg-0">
                         <label for="check_in" class="form-label">Check In</label>
@@ -38,7 +39,7 @@
                     <div class="col col-lg-2 mb-lg-0">
                         <label class="form-label opacity-0">Button</label>
                         <br>
-                        <button type="submit" class="btn btn-primary">Cek Kamar</button>
+                        <button type="submit" class="btn btn-primary">Cek</button>
                     </div>
                 </form>
             </div>
@@ -49,7 +50,7 @@
             <div class="alert alert-primary text-center" role="alert">Kamar Kosong Tersedia - Pesan Sekarang !</div>
             <!-- Form -->
             <div class="card">
-                <h5 class="card-header">Form Reservasi</h5>
+                <div class="card-header text-primary">Form Reservasi</div>
                 <form class="card-body row gy-4" action="" method="">
                     <div class="col-12">
                         <label for="nama_pemesan" class="form-label text-muted">Nama Pemesan</label>
