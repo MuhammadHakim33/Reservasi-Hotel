@@ -1,103 +1,54 @@
-<!-- Content Wrapper -->
-<div id="content-wrapper" class="d-flex flex-column">
-
-    <!-- Main Content -->
-    <div id="content">
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-            <!-- Sidebar Toggle (Topbar) -->
-            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                <i class="fa fa-bars"></i>
-            </button>
-
-            <!-- Topbar Navbar -->
-            <ul class="navbar-nav ml-auto">
-
-                <!-- Nav Item - User Information -->
-                <li class="nav-item dropdown no-arrow">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $nama; ?></span>
-                        <img class="img-profile rounded-circle" src="<?php base_url();?> assets/img/undraw_profile.svg">
-                    </a>
-                    <!-- Dropdown - User Information -->
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="<?= base_url('login/logout'); ?>">
-                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                            Logout
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-            <!-- Content Row -->
-            <div class="row">
-                <!-- Table Kamar -->
-                <div class="col-12">
-                    <div class="card shadow mb-4">
-                        <!-- Card Header -->
-                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Reservasi</h6>
-                        </div>
-                        <!-- Card Body -->
-                        <div class="card-body">
-                            <!-- Top -->
-                            <div class="d-flex">
-                                <!-- Search -->
-                                <form class="d-inline-block form-inline mr-auto navbar-search" action="" method="">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="search" aria-describedby="search" placeholder="Cari">
-                                    </div>
-                                </form>
-                            </div>
-
-                            <!-- Table -->
-                            <div class="table-responsive mt-4">
-                                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Button</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-primary shadow-sm">Ubah</a>
-                                                <a href="#" class="btn btn-sm btn-danger shadow-sm">Hapus</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-primary shadow-sm">Ubah</a>
-                                                <a href="#" class="btn btn-sm btn-danger shadow-sm">Hapus</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+<div class="container pt-5">
+    <div class="card">
+        <div class="card-header"><strong>Data Reservasi</strong></div>
+        <div class="card-body">
+            <!-- Search Form -->
+            <form action="" class="d-flex mt-2 mb-4 float-end">
+                <div class="me-3 input-group">
+                    <input type="text" class="form-control" name="nama_tamu" placeholder="Cari Nama Tamu">
                 </div>
+                <div class="me-3">
+                    <input type="date" class="form-control" name="check_in">
+                </div>
+                <div class="me-3">
+                    <button class="btn btn-primary">Cari</button>
+                </div>
+            </form>
+
+            <!-- Table -->
+            <div class="table-responsive-md">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nama Pemesan</th>
+                            <th>Nama Tamu</th>
+                            <th>Email</th>
+                            <th>Telp</th>
+                            <th>Tipe Kamar</th>
+                            <th>Check In</th>
+                            <th>Check Out</th>
+                            <th>Jumlah Kamar</th>
+                            <th width="10%">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Super</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>4</td>
+                            <td>
+                                <a href="" type="button" class="btn btn-outline-primary btn-sm ">Check In</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <!-- End Table -->
         </div>
-        <!-- /.container-fluid -->
     </div>
-    <!-- End of Main Content -->
+</div>
