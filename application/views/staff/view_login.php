@@ -5,42 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?= $title;?></title>
-    <!-- Custom fonts for this template-->
-    <link href="<?php base_url();?> assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
-    <link href="<?php base_url();?> assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php base_url();?> assets/css/bootstrap.css" rel="stylesheet">
 </head>
-<body class="bg-gradient-primary">
+<body class="bg-primary">
     <div class="container">
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <div class="p-5">
-                            <div class="text-center"><h1 class="h4 text-gray-900 mb-4">Staff Login</h1></div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-5">
+                <!-- Form Login -->
+                <div class="card shadow-lg my-5">
+                    <div class="card-header"><Strong>Staff Login</Strong></div>
+                    <div class="card-body">
+                        <?php if($this->session->flashdata('pesanLogin')) : ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <?= $this->session->flashdata('pesanLogin') ?>
+                            </div>
+                        <?php endif; ?>
 
-                            <?php if($this->session->flashdata('pesanLogin')) : ?>
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <?= $this->session->flashdata('pesanLogin') ?>
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                            <?php endif; ?>
-
-                            <form class="user" method="POST" action="<?= base_url('login') ?>">
-                                <!-- Username -->
-                                <div class="form-group">
-                                    <input type="username" class="form-control form-control-user" id="username" aria-describedby="username" placeholder="Username" name="username" required>
-                                </div>
-                                <!-- Password -->
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-user" id="password" placeholder="Password" name="password" required>
-                                </div>
-                                <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Login</button>
-                            </form>
-                        </div>
+                        <form class="user" method="POST" action="<?= base_url('login') ?>">
+                            <!-- Username -->
+                            <div class="form-group mb-3">
+                                <input type="username" class="form-control form-control-user" id="username" aria-describedby="username" placeholder="Username" name="username" required>
+                            </div>
+                            <!-- Password -->
+                            <div class="form-group mb-3">
+                                <input type="password" class="form-control form-control-user" id="password" placeholder="Password" name="password" required>
+                            </div>
+                            <button type="submit" name="login" class="btn btn-primary btn-user btn-block">Login</button>
+                        </form>
                     </div>
                 </div>
             </div>
