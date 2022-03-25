@@ -45,9 +45,8 @@ class Login extends CI_Controller {
 					'nama' => $data_login[0]["nama"],
 					'level' => $data_login[0]["level"]
 				];
-
+				
 				$this->session->set_userdata($data_session);
-
 				($data_session["level"] == "administrator") ? redirect(base_url("admin")) : redirect(base_url("resepsionis"));
 				
 			} else { 

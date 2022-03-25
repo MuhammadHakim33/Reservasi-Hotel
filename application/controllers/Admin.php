@@ -24,8 +24,8 @@ class Admin extends CI_Controller {
 		$data["title"] = "Dashboard";
 		$data["nama"] = $this->session->userdata('nama');
         $this->load->view('staff/view_header', $data);
-        $this->load->view('staff/view_navside');
 		$this->load->view('staff/view_dashboard_admin');
+        $this->load->view('staff/view_set_modal');
         $this->load->view('staff/view_footer');
 	}
     
