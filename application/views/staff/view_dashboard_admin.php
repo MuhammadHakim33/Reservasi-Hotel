@@ -1,3 +1,4 @@
+
 <div class="container pt-5">
     <div class="card">
         <div class="card-body">
@@ -22,31 +23,36 @@
                     Tambah Data
                     </button>
                     <!-- Table -->
-                    <div class="table-responsive-md">
+                    <div class="table-responsive-md col-12">
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th width="25%">Tipe Kamar</th>
-                                    <th width="25%">Gambar</th>
                                     <th width="15%">Jumlah Kamar</th>
+                                    <th width="25%">Gambar</th>
                                     <th width="20%">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Super</td>
-                                    <td>@mdo</td>
-                                    <td>4</td>
-                                    <td>
-                                        <a href="" type="button" class="btn btn-outline-primary btn-sm mb-1 mb-md-0">Edit</a>
-                                        <a href="" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
-                                    </td>
-                                </tr>
+                                <?php foreach($kamar as $data) :?>
+                                    <tr>
+                                        <td><?= $data['nama_tipe_kamar'] ?></td>
+                                        <td><?= $data['jumlah_kamar'] ?></td>
+                                        <td>
+                                            <img src="<?= base_url( 'assets/img/' . $data['gambar_kamar']) ?>" class="img-fluid">
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-primary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalEditKamar<?= $data['id'] ?>">Edit</button>
+                                            <a href="<?= base_url( 'admin/hapus_kamar/' . $data['id']) ?>" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach;?>
                             </tbody>
                         </table>
                     </div>
                     <!-- End Table -->
                 </div>
+
                 <!-- Content Fasilitas Kamar -->
                 <div class="tab-pane fade mt-3" id="fasilitas-kamar" role="tabpanel" aria-labelledby="fasilitas-kamar-tab">
                     <!-- Button trigger modal -->
@@ -54,7 +60,7 @@
                     Tambah Data
                     </button>
                     <!-- Table -->
-                    <div class="table-responsive-md">
+                    <div class="table-responsive- col-12">
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -64,19 +70,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Super</td>
-                                    <td>@mdo</td>
-                                    <td>
-                                        <a href="" type="button" class="btn btn-outline-primary btn-sm mb-1 mb-md-0">Edit</a>
-                                        <a href="" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
-                                    </td>
-                                </tr>
+                                <?php foreach($fasilitas_kamar as $data) :?>
+                                    <tr>
+                                        <td><?= $data['nama_tipe_kamar'] ?></td>
+                                        <td><?= $data['fasilitas_kamar'] ?></td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-primary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalEditFasilitasKamar<?= $data['id'] ?>">Edit</button>
+                                            <a href="<?= base_url( 'admin/hapus_fasilitas_kamar/' . $data['id']) ?>" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach;?>
                             </tbody>
                         </table>
                     </div>
                     <!-- End Table -->
                 </div>
+
                 <!-- Content Fasilitas Hotel -->
                 <div class="tab-pane fade mt-3" id="fasilitas-hotel" role="tabpanel" aria-labelledby="fasilitas-hotel-tab">
                     <!-- Button trigger modal -->
@@ -84,24 +93,30 @@
                     Tambah Data
                     </button>
                     <!-- Table -->
-                    <div class="table-responsive-md">
+                    <div class="table-responsive-md col-12">
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th width="25%">Fasilitas</th>
-                                    <th width="25%">Gambar</th>
+                                    <th width="15%">Fasilitas</th>
+                                    <th width="25%">Keterangan Fasilitas</th>
+                                    <th width="20%">Gambar</th>
                                     <th width="15%">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Super</td>
-                                    <td>@mdo</td>
-                                    <td>
-                                        <a href="" type="button" class="btn btn-outline-primary btn-sm mb-1 mb-md-0">Edit</a>
-                                        <a href="" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
-                                    </td>
-                                </tr>
+                                <?php foreach($fasilitas_hotel as $data) :?>
+                                    <tr>
+                                        <td><?= $data['fasilitas_hotel'] ?></td>
+                                        <td><?= $data['keterangan_fasilitas'] ?></td>
+                                        <td>
+                                            <img src="<?= base_url( 'assets/img/' . $data['gambar_fasilitas_hotel']) ?>" class="img-fluid" >
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-primary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalEditFasilitasHotel<?= $data['id'] ?>">Edit</button>
+                                            <a href="<?= base_url( 'admin/hapus_fasilitas_hotel/' . $data['id']) ?>" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach;?>
                             </tbody>
                         </table>
                     </div>
