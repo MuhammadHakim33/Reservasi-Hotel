@@ -16,6 +16,7 @@
             </ul>
             <!-- Content -->
             <div class="tab-content" id="myTabContent">
+
                 <!-- Content Kamar -->
                 <div class="tab-pane fade show active mt-3" id="kamar" role="tabpanel" aria-labelledby="kamar-tab">
                     <!-- Button trigger modal -->
@@ -39,7 +40,7 @@
                                         <td><?= $data['nama_tipe_kamar'] ?></td>
                                         <td><?= $data['jumlah_kamar'] ?></td>
                                         <td>
-                                            <img src="<?= base_url( 'assets/img/' . $data['gambar_kamar']) ?>" class="img-fluid">
+                                            <img src="<?= base_url( 'assets/img/' . $data['gambar_kamar']) ?>" class="img-fluid" loading="lazy">
                                         </td>
                                         <td>
                                             <button type="button" class="btn btn-outline-primary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalEditKamar<?= $data['id'] ?>">Edit</button>
@@ -109,7 +110,7 @@
                                         <td><?= $data['fasilitas_hotel'] ?></td>
                                         <td><?= $data['keterangan_fasilitas'] ?></td>
                                         <td>
-                                            <img src="<?= base_url( 'assets/img/' . $data['gambar_fasilitas_hotel']) ?>" class="img-fluid" >
+                                            <img src="<?= base_url( 'assets/img/' . $data['gambar_fasilitas_hotel']) ?>" class="img-fluid" loading="lazy">
                                         </td>
                                         <td>
                                             <button type="button" class="btn btn-outline-primary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalEditFasilitasHotel<?= $data['id'] ?>">Edit</button>
