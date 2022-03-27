@@ -7,14 +7,10 @@
             <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="<?= base_url('assets/img/image1.png');?>" class="d-block w-100" alt="Hotel">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="<?= base_url('assets/img/image2.png');?>" class="d-block w-100" alt="Hotel View">
+                        <img src="<?= base_url('assets/img/hotel.jpg');?>" class="d-block w-100" alt="Hotel" loading="lazy">
                     </div>
                 </div>
             </div>
