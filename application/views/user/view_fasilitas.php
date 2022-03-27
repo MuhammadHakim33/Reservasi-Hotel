@@ -4,24 +4,17 @@
         <!-- Divider -->
         <div class="col-12 mt-1"><hr></div>
         <!-- Fasilitas -->
-        <div class="col col-6">
-            <div class="card mb-3">
-                <img src="<?php base_url();?> assets/img/room1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <!-- Nama Fasilitas -->
-                    <h5 class="card-text text-muted"><small>Lapangan Bola</small></h5>
+        <?php foreach($fasilitas_hotel as $data_fasilitas) :?>
+            <div class="col-12 col-sm-6">
+                <div class="card mb-3">
+                    <img src="<?= base_url('assets/img/' . $data_fasilitas['gambar_fasilitas_hotel']) ?>" class="card-img-top" loading="lazy">
+                    <div class="card-body">
+                        <!-- Nama Fasilitas -->
+                        <h5 class="card-title"><?= $data_fasilitas['fasilitas_hotel'] ?></h5>
+                        <p class="card-subtitle mt-2 text-muted"><?= $data_fasilitas['keterangan_fasilitas'] ?></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Fasilitas -->
-        <div class="col col-6">
-            <div class="card mb-3">
-                <img src="<?php base_url();?> assets/img/room1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <!-- Nama Fasilitas -->
-                    <h5 class="card-text text-muted"><small>Lapangan Bola</small></h5>
-                </div>
-            </div>
-        </div>
+        <?php endforeach;?>
     </div>
 </div>
