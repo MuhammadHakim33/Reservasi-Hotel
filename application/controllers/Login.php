@@ -36,7 +36,7 @@ class Login extends CI_Controller {
 				'password' => $password
 			];
 
-			$data_login = $this->Model_main->getData("tbl_staff", $where);
+			$data_login = $this->Model_main->get_data("tbl_staff", $where);
 
 			if(count($data_login) > 0){
 
