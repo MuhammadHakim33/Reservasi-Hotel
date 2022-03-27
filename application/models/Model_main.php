@@ -7,10 +7,10 @@ class Model_main extends CI_Model {
         return $data->result_array();
     }
 
-    public function get_join_data($table_one, $table_two, $parameter_one, $parameter_two) {
+    public function get_join_data($table_one, $table_two, $parameter_one, $parameter_two, $type = 'inner') {
         $this->db->select('*');
         $this->db->from($table_two);
-        $this->db->join($table_one, $table_one . '.' . $parameter_one  . '=' . $table_two . '.' . $parameter_two );
+        $this->db->join($table_one, $table_one . '.' . $parameter_one  . '=' . $table_two . '.' . $parameter_two, $type );
         $query = $this->db->get();
         return $query->result_array();
     }
