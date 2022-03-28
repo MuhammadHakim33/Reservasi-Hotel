@@ -6,11 +6,10 @@
 //     document.querySelector(".navbar").classList.add("bg-dark");
 // }
 
-// if(document.title == "Cetak") {
-//     document.querySelector(".navbar").classList.remove("bg-dark");
-//     document.querySelector(".navbar").classList.add("bg-transparent");
-//     window.print();
-// }
+function printPage(){
+    window.print()
+    window.location.replace('http://localhost/reservasi-hotel/');
+}
 
 // Active State Navbar in User Page
 function navActive() {
