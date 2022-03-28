@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pb-5">
     <div class="row">
         <!-- Divider -->
         <div class="col-12"><hr></div>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="col col-lg-2 mb-lg-0">
                         <label for="jumah_kamar" class="form-label">Jumlah Kamar</label>
-                        <input type="number" class="form-control" id="jumah_kamar" name="jumah_kamar" value="1">
+                        <input type="number" min="1" class="form-control" id="jumah_kamar" name="jumah_kamar" value="1">
                     </div>
                     <div class="col col-lg-2 mb-lg-0">
                         <label class="form-label opacity-0">Button</label>
@@ -43,9 +43,9 @@
         <!-- Form Reservasi -->
         <div class="col-12 my-4 offset-md-1 col-md-10">
             <!-- Alert -->
-            <div class="alert alert-primary text-center" role="alert">Kamar Kosong Tersedia - Pesan Sekarang !</div>
+            <!-- <div class="alert alert-primary text-center" role="alert">Kamar Kosong Tersedia - Pesan Sekarang !</div> -->
             <!-- Form -->
-            <div class="card">
+            <!-- <div class="card">
                 <div class="card-header text-primary">Form Reservasi</div>
                 <form class="card-body row gy-4" action="" method="">
                     <div class="col-12">
@@ -77,6 +77,6 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
