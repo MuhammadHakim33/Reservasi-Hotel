@@ -1,4 +1,4 @@
-<div class="container pt-5">
+<div class="container py-5">
     <div class="card">
         <div class="card-header"><strong>Data Reservasi</strong></div>
         <div class="card-body">
