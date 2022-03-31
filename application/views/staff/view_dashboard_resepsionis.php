@@ -28,23 +28,21 @@
                             <th>Check In</th>
                             <th>Check Out</th>
                             <th>Jumlah Kamar</th>
-                            <th width="10%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Super</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>4</td>
-                            <td>
-                                <a href="" type="button" class="btn btn-outline-primary btn-sm ">Check In</a>
-                            </td>
-                        </tr>
+                        <?php foreach($reservasi as $data) :?>
+                            <tr>
+                                <td><?= $data['nama_pemesan'] ?></td>
+                                <td><?= $data['nama_tamu'] ?></td>
+                                <td><?= $data['email_pemesan'] ?></td>
+                                <td><?= $data['telp_pemesan'] ?></td>
+                                <td><?= $data['nama_tipe_kamar'] ?></td>
+                                <td><?= $data['check_in_kamar'] ?></td>
+                                <td><?= $data['check_out_kamar'] ?></td>
+                                <td><?= $data['jumlah_kamar'] ?></td>
+                            </tr>
+                        <?php endforeach;?>
                     </tbody>
                 </table>
             </div>

@@ -23,8 +23,10 @@ class Resepsionis extends CI_Controller {
 	{
 		$data["title"] = "Dashboard";
 		$data["nama"] = $this->session->userdata('nama');
+		$data["reservasi"] = $this->Model_main->get_join_data('tbl_reservasi', 'tbl_kamar', 'id_kamar' , 'id');
+
         $this->load->view('staff/view_header', $data);
-		$this->load->view('staff/view_dashboard_resepsionis');
+		$this->load->view('staff/view_dashboard_resepsionis', $data);
         $this->load->view('staff/view_footer');
 	}
 }
