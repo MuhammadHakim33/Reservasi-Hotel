@@ -41,37 +41,32 @@
                     <!-- Body -->
                     <div class="card-body" id="card-body">
                         <div class="row row-cols-1 g-0">
-                            <!-- Kode Pemesanan -->
-                            <div class="col d-flex align-self-center">
-                                <p class="card-text flex-grow-1">Kode Pemesanan</p>
-                                <p><strong>09991773</strong></p>
-                            </div>
                             <!-- Tanggal Pemesanan -->
                             <div class="col d-flex align-self-center">
                                 <p class="card-text text-muted flex-grow-1 mb-0">Tanggal Pemesanan</p>
-                                <p class="mb-0">1 Feb 2090</p>
+                                <p class="mb-0"><?= $reservasi_tamu[0]['created_at'] ?></p>
                             </div>
                             <!-- Divider -->
                             <div class="col-12"><hr></div>
                             <!-- Nama Tamu -->
                             <div class="col d-flex align-self-center">
                                 <p class="card-text text-muted flex-grow-1">Nama Tamu</p>
-                                <p>Ibnu Bambang</p>
+                                <p><?= $reservasi_tamu[0]['nama_tamu'] ?></p>
                             </div>
                             <!-- Check In -->
                             <div class="col d-flex align-self-center">
                                 <p class="card-text text-muted flex-grow-1">Check-in</p>
-                                <p>3 Feb 2090</p>
+                                <p><?= $reservasi_tamu[0]['check_in_kamar'] ?></p>
                             </div>
                             <!-- Check Out -->
                             <div class="col d-flex">
                                 <p class="card-text text-muted flex-grow-1">Check-out</p>
-                                <p>4 Feb 2090</p>
+                                <p><?= $reservasi_tamu[0]['check_out_kamar'] ?></p>
                             </div>
                             <!-- Jumlah Kamar -->
                             <div class="col d-flex">
                                 <p class="card-text text-muted flex-grow-1 mb-0">Jumlah Kamar</p>
-                                <p class="mb-0">1</p>
+                                <p class="mb-0"><?= $reservasi_tamu[0]['jumlah_kamar'] ?></p>
                             </div>
                         </div>
                     </div>
@@ -88,7 +83,6 @@
             <div class="col-12">
                 <table border="1" cellpadding="10" cellspacing="0" class="print">
                     <tr>
-                        <th>Kode Pemesanan</th>
                         <th>Tanggal Pemesanan</th>
                         <th>Nama Tamu</th>
                         <th>Check in</th>
@@ -96,12 +90,11 @@
                         <th>Jumlah Kamar</th>
                     </tr>
                     <tr>
-                        <td>09991773</td>
-                        <td>1 Feb 2090</td>
-                        <td>Ibnu Bambang</td>
-                        <td>3 Feb 2090</td>
-                        <td>4 Feb 2090</td>
-                        <td>1</td>
+                        <td><?= $reservasi_tamu[0]['created_at'] ?></td>
+                        <td><?= $reservasi_tamu[0]['nama_tamu'] ?></td>
+                        <td><?= $reservasi_tamu[0]['check_in_kamar'] ?></td>
+                        <td><?= $reservasi_tamu[0]['check_out_kamar'] ?></td>
+                        <td><?= $reservasi_tamu[0]['jumlah_kamar'] ?></td>
                     </tr>
                 </table>
             </div>

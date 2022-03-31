@@ -57,22 +57,30 @@
                 <!-- Form -->
                 <div class="card">
                     <div class="card-header text-primary">Form Reservasi</div>
-                    <form class="card-body row gy-4" action="" method="">
+                    <form class="card-body row gy-4" action="<?= base_url('beranda/reservasi_kamar') ?>" method="POST">
+                        <!-- Hidden Input -->
+                        <div class="mb-0">
+                            <input type="text" class="form-control" id="check_in" name="check_in" value="<?= $data_kamar_dipesan['check_in'] ?>" readonly hidden>
+                            <input type="text" class="form-control" id="check_out" name="check_out" value="<?= $data_kamar_dipesan['check_out'] ?>" readonly hidden>
+                            <input type="text" class="form-control" id="tipe_kamar" name="tipe_kamar" value="<?= $data_kamar_dipesan['tipe_kamar'] ?>" readonly hidden>
+                            <input type="number" class="form-control" id="jumlah_kamar" name="jumlah_kamar" value="<?= $data_kamar_dipesan['jumlah_kamar'] ?>" readonly hidden>
+                        </div>
+                        <!-- Normal Input -->
                         <div class="col-12">
                             <label for="nama_pemesan" class="form-label text-muted">Nama Pemesan</label>
-                            <input type="text" class="form-control" id="nama_pemesan" name="nama_pemesan">
+                            <input type="text" class="form-control" id="nama_pemesan" name="nama_pemesan" required>
                         </div>
                         <div class="col-12">
                             <label for="nama_tamu" class="form-label text-muted">Nama Tamu</label>
-                            <input type="text" class="form-control" id="nama_tamu" name="nama_tamu">
+                            <input type="text" class="form-control" id="nama_tamu" name="nama_tamu" required>
                         </div>
                         <div class="col-12 col-sm-6">
-                            <label for="email" class="form-label text-muted">Email</label>
-                            <input type="text" class="form-control" id="email" name="email">
+                            <label for="email_pemesan" class="form-label text-muted">Email</label>
+                            <input type="email" class="form-control" id="email_pemesan" name="email_pemesan" required>
                         </div>
                         <div class="col-12 col-sm-6">
-                            <label for="telp" class="form-label text-muted">No. Handphone</label>
-                            <input type="text" class="form-control" id="telp" name="telp">
+                            <label for="telp_pemesan" class="form-label text-muted">No. Handphone</label>
+                            <input type="text" class="form-control" id="telp_pemesan" name="telp_pemesan" required>
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary">Pesan</button>
