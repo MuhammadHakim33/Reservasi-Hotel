@@ -25,6 +25,16 @@ class Resepsionis extends CI_Controller {
 		$data["nama"] = $this->session->userdata('nama');
 		$data["reservasi"] = $this->Model_main->get_join_data('tbl_reservasi', 'tbl_kamar', 'id_kamar' , 'id');
 
+		// Funsi Search
+		if(!empty($this->input->post('nama_tamu')) || !empty($this->input->post('check_in'))) {
+			$keyword = [
+				'nama_tamu' => $this->input->post('nama_tamu'), 
+				'check_in_kamar' => $this->input->post('check_in')
+			];
+
+			$data['reservasi'] = $this->Model_main->search_data('tbl_reservasi', 'tbl_kamar', 'id_kamar' , 'id', $keyword);
+		}
+
         $this->load->view('staff/view_header', $data);
 		$this->load->view('staff/view_dashboard_resepsionis', $data);
         $this->load->view('staff/view_footer');

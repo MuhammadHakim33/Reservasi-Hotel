@@ -28,4 +28,18 @@ class Model_main extends CI_Model {
         $this->db->where($where);
         $this->db->update($table, $input);
     }
+
+    public function search_data($table_one, $table_two, $parameter_one, $parameter_two, $keyword) {
+        $this->db->select('*');
+        $this->db->from($table_two);
+        $this->db->join($table_one, $table_one . '.' . $parameter_one  . '=' . $table_two . '.' . $parameter_two );
+
+        if($keyword) {
+            $this->db->where('nama_tamu', $keyword['nama_tamu']);
+            $this->db->or_where('check_in_kamar', $keyword['check_in_kamar']);
+        }
+
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }
