@@ -22,3 +22,11 @@ function navActive() {
 }
 
 window.onload = navActive;
+
+
+// Modal Bootstrap Show
+if(document.getElementById('modal')){
+    var myModal = new bootstrap.Modal(document.getElementById('modal'))
+    myModal.show()
+}
+
