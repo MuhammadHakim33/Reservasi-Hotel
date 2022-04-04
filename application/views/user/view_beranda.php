@@ -92,5 +92,11 @@
                 <div class="alert alert-danger text-center" role="alert">Kamar Penuh !</div>            
             <?php endif; ?>
         </div>
+
+        <!-- Tentang Kami -->
+        <div class="col-12 my-4">
+            <!-- <p>Tentang Kami</p> -->
+            <h2 class="lh-base text-muted">Salah satu hotel bintang 5 di negara ini. Berada di lokasi yang strategis di pusat kota, sehingga memudahkan tamu untuk mengunjungi tempat hiburan. Telah mendapatkan berbagai penghargaan bergengsi internasional, sehingga pelayanan kami tidak perlu diragukan lagi.</h2>
+        </div>
     </div>
 </div>
