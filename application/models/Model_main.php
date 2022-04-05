@@ -7,14 +7,6 @@ class Model_main extends CI_Model {
         return $data->result_array();
     }
 
-    public function get_join_data($table_one, $table_two, $parameter_one, $parameter_two, $type = 'inner') {
-        $this->db->select('*');
-        $this->db->from($table_two);
-        $this->db->join($table_one, $table_one . '.' . $parameter_one  . '=' . $table_two . '.' . $parameter_two, $type );
-        $query = $this->db->get();
-        return $query->result_array();
-    }
-
     public function insert_data($table, $input) {
         $this->db->insert($table, $input);
     }
@@ -29,10 +21,9 @@ class Model_main extends CI_Model {
         $this->db->update($table, $input);
     }
 
-    public function search_data($table_one, $table_two, $parameter_one, $parameter_two, $keyword) {
+    public function search_data($table, $keyword) {
         $this->db->select('*');
-        $this->db->from($table_two);
-        $this->db->join($table_one, $table_one . '.' . $parameter_one  . '=' . $table_two . '.' . $parameter_two );
+        $this->db->from($table);
 
         if($keyword) {
             $this->db->where('nama_tamu', $keyword['nama_tamu']);

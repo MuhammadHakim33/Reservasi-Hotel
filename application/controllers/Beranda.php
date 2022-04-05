@@ -71,7 +71,7 @@ class Beranda extends CI_Controller {
 		$email_pemesan = $this->input->post('email_pemesan');
 		$telp_pemesan = $this->input->post('telp_pemesan');
 		
-		$table = 'tbl_reservasi';
+		$table = 'data_reservasi';
 		$input = [
 			'id_kamar' => $tipe_kamar,
 			'check_in_kamar' => $check_in,

@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
 		$data["title"] = "Dashboard";
 		$data["nama"] = $this->session->userdata('nama');
 		$data["kamar"] = $this->Model_main->get_data('tbl_kamar');
-		$data["fasilitas_kamar"] = $this->Model_main->get_join_data('tbl_fasilitas_kamar', 'tbl_kamar', 'id_kamar' , 'id');
+		$data["fasilitas_kamar"] = $this->Model_main->get_data('data_fasilitas_kamar');
 		$data["fasilitas_hotel"] = $this->Model_main->get_data('tbl_fasilitas_hotel');
 
         $this->load->view('staff/view_header', $data);
