@@ -63,6 +63,11 @@
                                 <p class="card-text text-muted flex-grow-1">Check-out</p>
                                 <p><?= $reservasi_tamu[0]['check_out_kamar'] ?></p>
                             </div>
+                            <!-- Tipe Kamar -->
+                            <div class="col d-flex">
+                                <p class="card-text text-muted flex-grow-1">Tipe Kamar</p>
+                                <p><?= $reservasi_tamu[0]['nama_tipe_kamar'] ?></p>
+                            </div>
                             <!-- Jumlah Kamar -->
                             <div class="col d-flex">
                                 <p class="card-text text-muted flex-grow-1 mb-0">Jumlah Kamar</p>
@@ -87,6 +92,7 @@
                         <th>Nama Tamu</th>
                         <th>Check in</th>
                         <th>Check out</th>
+                        <th>Tipe Kamar</th>
                         <th>Jumlah Kamar</th>
                     </tr>
                     <tr>
@@ -94,6 +100,7 @@
                         <td><?= $reservasi_tamu[0]['nama_tamu'] ?></td>
                         <td><?= $reservasi_tamu[0]['check_in_kamar'] ?></td>
                         <td><?= $reservasi_tamu[0]['check_out_kamar'] ?></td>
+                        <td><?= $reservasi_tamu[0]['nama_tipe_kamar'] ?></td>
                         <td><?= $reservasi_tamu[0]['jumlah_kamar'] ?></td>
                     </tr>
                 </table>
