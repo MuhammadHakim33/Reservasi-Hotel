@@ -43,8 +43,9 @@
                                             <img src="<?= base_url( 'assets/img/' . $data['gambar_kamar']) ?>" class="img-fluid" loading="lazy">
                                         </td>
                                         <td>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalLihatKamar<?= $data['id'] ?>">Lihat</button>
                                             <button type="button" class="btn btn-outline-primary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalEditKamar<?= $data['id'] ?>">Edit</button>
-                                            <a href="<?= base_url( 'admin/hapus_kamar/' . $data['id']) ?>" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
+                                            <a href="<?= base_url( 'admin/hapus_kamar/' . $data['id']) ?>" onclick="return confirm('Hapus Data ?')" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
                                         </td>
                                     </tr>
                                 <?php endforeach;?>
@@ -76,8 +77,9 @@
                                         <td><?= $data['nama_tipe_kamar'] ?></td>
                                         <td><?= $data['fasilitas_kamar'] ?></td>
                                         <td>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalLihatFasilitasKamar<?= $data['id'] ?>">Lihat</button>
                                             <button type="button" class="btn btn-outline-primary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalEditFasilitasKamar<?= $data['id'] ?>">Edit</button>
-                                            <a href="<?= base_url( 'admin/hapus_fasilitas_kamar/' . $data['id']) ?>" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
+                                            <a href="<?= base_url( 'admin/hapus_fasilitas_kamar/' . $data['id']) ?>" onclick="return confirm('Hapus Data ?')" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
                                         </td>
                                     </tr>
                                 <?php endforeach;?>
@@ -113,8 +115,9 @@
                                             <img src="<?= base_url( 'assets/img/' . $data['gambar_fasilitas_hotel']) ?>" class="img-fluid" loading="lazy">
                                         </td>
                                         <td>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalLihatFasilitasHotel<?= $data['id'] ?>">Lihat</button>
                                             <button type="button" class="btn btn-outline-primary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalEditFasilitasHotel<?= $data['id'] ?>">Edit</button>
-                                            <a href="<?= base_url( 'admin/hapus_fasilitas_hotel/' . $data['id']) ?>" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
+                                            <a href="<?= base_url( 'admin/hapus_fasilitas_hotel/' . $data['id']) ?>" onclick="return confirm('Hapus Data ?')" type="button" class="btn btn-outline-danger btn-sm">Hapus</a>
                                         </td>
                                     </tr>
                                 <?php endforeach;?>

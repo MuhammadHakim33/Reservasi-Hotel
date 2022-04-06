@@ -194,3 +194,86 @@
         </div>
     </div>
 <?php endforeach;?>
+
+
+
+<!-- Modal Lihat Kamar -->
+<?php foreach($kamar as $data) :?>
+    <div class="modal fade" id="ModalLihatKamar<?= $data['id'] ?>" tabindex="-1" aria-labelledby="ModalLihatKamar<?= $data['id'] ?>Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalTambahKamarLabel">Lihat Data <?= $data['nama_tipe_kamar'] ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Input -->
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <img src="<?= base_url( 'assets/img/' . $data['gambar_kamar']) ?>" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tipe_kamar" class="form-label">Tipe Kamar</label>
+                        <input type="text" class="form-control" id="tipe_kamar" name="tipe_kamar" aria-describedby="tipeKamarHelp" value="<?= $data['nama_tipe_kamar'] ?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="jumlah_kamar" class="form-label">Jumlah Kamar</label>
+                        <input type="number" class="form-control" id="jumlah_kamar" name="jumlah_kamar" aria-describedby="jumlahKamarHelp" min="1" value="<?= $data['jumlah_kamar'] ?>" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach;?>
+
+<!-- Modal Lihat Fasilitas Kamar -->
+<?php foreach($fasilitas_kamar as $data) :?>
+    <div class="modal fade" id="ModalLihatFasilitasKamar<?= $data['id'] ?>" tabindex="-1" aria-labelledby="ModalLihatFasilitasKamar<?= $data['id'] ?>Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalTambahKamarLabel">Lihat Data <?= $data['nama_tipe_kamar'] ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Input -->
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="tipe_kamar" class="form-label">Tipe Kamar</label>
+                        <input type="text" class="form-control" id="fasilitas_kamar" name="fasilitas_kamar" aria-describedby="fasilitasKamarHelp" value="<?= $data['nama_tipe_kamar'] ?>" readonly> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="fasilitas_kamar" class="form-label">Fasilitas Kamar</label>
+                        <input type="text" class="form-control" id="fasilitas_kamar" name="fasilitas_kamar" aria-describedby="fasilitasKamarHelp" value="<?= $data['fasilitas_kamar'] ?>" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach;?>
+
+<!-- Modal Lihat Fasilitas KaHotelmar -->
+<?php foreach($fasilitas_hotel as $data) :?>
+    <div class="modal fade" id="ModalLihatFasilitasHotel<?= $data['id'] ?>" tabindex="-1" aria-labelledby="ModalLihatFasilitasHotel<?= $data['id'] ?>Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalTambahKamarLabel">Lihat Data Fasilitas <?= $data['fasilitas_hotel'] ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Input -->
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <img src="<?= base_url( 'assets/img/' . $data['gambar_fasilitas_hotel']) ?>" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fasilitas_hotel" class="form-label">Fasilitas Hotel</label>
+                        <input type="text" class="form-control" id="fasilitas_hotel" name="fasilitas_hotel" aria-describedby="fasilitasHotelHelp" value="<?= $data['fasilitas_hotel'] ?>" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="keterangan_fasilitas" class="form-label">Keterangan Fasilitas</label>
+                        <input type="text" class="form-control" id="keterangan_fasilitas" name="keterangan_fasilitas" aria-describedby="keteranganfasilitasHelp" value="<?= $data['keterangan_fasilitas'] ?>" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach;?>
