@@ -38,4 +38,16 @@ class Resepsionis extends CI_Controller {
 		$this->load->view('staff/view_dashboard_resepsionis', $data);
         $this->load->view('staff/view_footer');
 	}
+
+	public function edit_status() {
+		$id =  $this->input->post('id', true);
+
+		$table = 'tbl_reservasi';
+		$where = ['id' => $id];
+		$input = ['status' => "terkonfirmasi"];
+
+		$this->Model_main->update_data($table, $input, $where);
+		redirect(base_url('resepsionis'));
+		die;
+	}
 }

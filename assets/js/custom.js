@@ -1,16 +1,5 @@
-// Background dan Navbar User Dinamis
-// if(document.title != "Beranda") {
-//     document.body.classList.remove("bg-dark");
-//     document.body.classList.add("bg-light");
-//     document.querySelector(".navbar").classList.remove("bg-transparent");
-//     document.querySelector(".navbar").classList.add("bg-dark");
-// }
 
-function printPage(){
-    window.print()
-    window.location.replace('http://localhost/reservasi-hotel/');
-}
-
+window.onload = navActive;
 // Active State Navbar in User Page
 function navActive() {
     let navLink = document.querySelectorAll('.navbar-nav .nav-item .nav-link');
@@ -21,7 +10,12 @@ function navActive() {
     }
 }
 
-window.onload = navActive;
+
+// Prin Halaman
+function printPage(){
+    window.print()
+    window.location.replace('http://localhost/reservasi-hotel/');
+}
 
 
 // Modal Bootstrap Show
@@ -29,4 +23,3 @@ if(document.getElementById('modalFormReservasi')){
     var ModalFormReservasi = new bootstrap.Modal(document.getElementById('modalFormReservasi'))
     ModalFormReservasi.show()
 }
-
