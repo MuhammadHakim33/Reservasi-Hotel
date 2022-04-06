@@ -64,12 +64,33 @@
                         <div class="modal-body">
                             <!-- Alert -->
                             <div class="alert alert-primary text-center" role="alert">Kamar Kosong Tersedia - Pesan Sekarang !</div>
-                            <!-- Hidden Input -->
-                            <div class="mb-0">
-                                <input type="text" class="form-control" id="check_in" name="check_in" value="<?= $data_kamar_dipesan['check_in'] ?>" readonly hidden>
-                                <input type="text" class="form-control" id="check_out" name="check_out" value="<?= $data_kamar_dipesan['check_out'] ?>" readonly hidden>
-                                <input type="text" class="form-control" id="tipe_kamar" name="tipe_kamar" value="<?= $data_kamar_dipesan['tipe_kamar'] ?>" readonly hidden>
-                                <input type="number" class="form-control" id="jumlah_kamar" name="jumlah_kamar" value="<?= $data_kamar_dipesan['jumlah_kamar'] ?>" readonly hidden>
+                            <!-- Rangkuman Reservasi -->
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <label class="form-label text-muted">Check In : </label>
+                                    <p><?= $data_kamar_dipesan['check_in'] ?></p>
+                                    <input type="hidden" class="form-control" id="check_in" name="check_in" value="<?= $data_kamar_dipesan['check_in'] ?>" readonly>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label class="form-label text-muted">Check out : </label>
+                                    <p><?= $data_kamar_dipesan['check_out'] ?></p>
+                                    <input type="hidden" class="form-control" id="check_out" name="check_out" value="<?= $data_kamar_dipesan['check_out'] ?>" readonly>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label class="form-label text-muted">Tipe Kamar : </label>
+                                    <input type="hidden" class="form-control" id="tipe_kamar" name="tipe_kamar" value="<?= $data_kamar_dipesan['tipe_kamar'] ?>" readonly>
+                                    <?php foreach($kamar as $data) :?>
+                                        <?php if($data['id'] == $data_kamar_dipesan['tipe_kamar']) :?>
+                                            <p><?= $data['nama_tipe_kamar'] ?></p>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label class="form-label text-muted">Jumlah Kamar : </label>
+                                    <p><?= $data_kamar_dipesan['jumlah_kamar'] ?></p>
+                                    <input type="hidden" class="form-control" id="jumlah_kamar" name="jumlah_kamar" value="<?= $data_kamar_dipesan['jumlah_kamar'] ?>" readonly>
+                                </div>
+                                <hr>
                             </div>
                             <!-- Normal Input -->
                             <div class="col-12 mb-3">

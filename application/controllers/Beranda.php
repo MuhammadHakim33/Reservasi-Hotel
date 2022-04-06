@@ -80,7 +80,8 @@ class Beranda extends CI_Controller {
 			'nama_pemesan' => $nama_pemesan,
 			'nama_tamu' => $nama_tamu,
 			'email_pemesan' => $email_pemesan,
-			'telp_pemesan' => $telp_pemesan
+			'telp_pemesan' => $telp_pemesan,
+			'status' => 'belum_terkonfirmasi',
 		];
 
 		$this->Model_main->insert_data($table, $input);
