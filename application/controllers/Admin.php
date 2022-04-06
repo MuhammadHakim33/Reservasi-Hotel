@@ -151,28 +151,19 @@ class Admin extends CI_Controller {
 
 	// Kumpulan Function Hapus Data
 	public function hapus_kamar($id) {
-		$table = 'tbl_kamar';
-		$where = ['id' => $id];
-
-		$this->Model_main->delete_data($table, $where);
+		$this->db->query('CALL sp_delete_data_kamar(' . $id . ')');
 		redirect(base_url('admin'));
 		die;
 	}
 
 	public function hapus_fasilitas_kamar($id) {
-		$table = 'tbl_fasilitas_kamar';
-		$where = ['id' => $id];
-
-		$this->Model_main->delete_data($table, $where);
+		$this->db->query('CALL sp_delete_data_fasilitas_kamar(' . $id . ')');
 		redirect(base_url('admin'));
 		die;
 	}
 
 	public function hapus_fasilitas_hotel($id) {
-		$table = 'tbl_fasilitas_hotel';
-		$where = ['id' => $id];
-
-		$this->Model_main->delete_data($table, $where);
+		$this->db->query('CALL sp_delete_data_fasilitas_hotel(' . $id . ')');
 		redirect(base_url('admin'));
 		die;
 	}
