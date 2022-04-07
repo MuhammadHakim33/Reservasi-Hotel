@@ -24,7 +24,7 @@
                             <th>Tipe Kamar</th>
                             <th>Check In</th>
                             <th>Check Out</th>
-                            <th>Jumlah Kamar</th>
+                            <th>Tanggal Pemesanan</th>
                             <th>Status</th>
                             <th>-</th>
                         </tr>
@@ -37,7 +37,7 @@
                                     <td><?= $data['nama_tipe_kamar'] ?></td>
                                     <td><?= $data['check_in_kamar'] ?></td>
                                     <td><?= $data['check_out_kamar'] ?></td>
-                                    <td><?= $data['jumlah_kamar'] ?></td>
+                                    <td><?= $data['created_at'] ?></td>
                                     <td id="badge_status">
                                         <?php if($data['status'] != 'terkonfirmasi') :?>
                                             <span class="badge bg-warning text-dark">Belum Terkonfirmasi</span>
@@ -86,6 +86,10 @@
                 </div>
                 <!-- Input -->
                 <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Tanggal Pemesanan</label>
+                        <input type="text" class="form-control" value="<?= $data['created_at'] ?>" readonly> 
+                    </div>
                     <div class="mb-3">
                         <label class="form-label">Nama Pemesan</label>
                         <input type="text" class="form-control" value="<?= $data['nama_pemesan'] ?>" readonly> 
