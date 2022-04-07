@@ -16,10 +16,24 @@
             margin-right: 10px;
             border-radius: 100%;
         }
-        table {display: none;}
+        table {
+            display: none;
+        }
+
         @media print{
-            .noPrint { display: none;}
-            .print { display: block !important;}
+            .noPrint { 
+                display: none;
+            }
+            .print { 
+                display: block !important;
+            }
+            table, td, th {
+                border: 1px solid;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
         }
     </style>
     <title><?= $title ?></title>
@@ -86,7 +100,7 @@
         <!-- Bagian Cetak -->
         <div class="row">
             <div class="col-12">
-                <table border="1" cellpadding="10" cellspacing="0" class="print">
+                <table border="1" cellpadding="10" class="print">
                     <tr>
                         <th>Tanggal Pemesanan</th>
                         <th>Nama Tamu</th>
