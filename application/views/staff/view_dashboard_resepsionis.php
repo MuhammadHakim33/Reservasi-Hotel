@@ -7,8 +7,8 @@
                 <div class="me-3 input-group">
                     <input type="text" class="form-control" name="nama_tamu" placeholder="Cari Nama Tamu">
                 </div>
-                <div class="me-3">
-                    <input type="date" class="form-control" name="check_in">
+                <div class="me-3 input-group">
+                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="check_in" placeholder="Cari Tanggal Check-in">
                 </div>
                 <div class="me-3">
                     <button class="btn btn-primary">Cari</button>
