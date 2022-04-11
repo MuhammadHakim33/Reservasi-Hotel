@@ -50,10 +50,10 @@
                                         <!-- Form Button Komfirmasi -->
                                         <form action="<?= base_url('resepsionis/edit_status') ?>" method="POST" class="ms-2">
                                             <input type="hidden" value="<?= $data['id'] ?>" name="id" readonly>
-                                            <?php if($data['status'] != 'terkonfirmasi') :?>
-                                                <button type="submit" class="btn btn-outline-primary btn-sm">Konfirmasi</button>
-                                            <?php else: ?>
+                                            <?php if($data['status'] == 'terkonfirmasi' || $data['check_out_kamar'] < date('Y-m-d')) :?>
                                                 <button type="submit" class="btn btn-outline-primary btn-sm" disabled>Konfirmasi</button>
+                                            <?php else: ?>
+                                                <button type="submit" class="btn btn-outline-primary btn-sm">Konfirmasi</button>
                                             <?php endif;?>
                                         </form>
                                     </td>
