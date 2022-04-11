@@ -22,8 +22,8 @@
                         <tr>
                             <th>Nama Tamu</th>
                             <th>Tipe Kamar</th>
-                            <th>Check In</th>
-                            <th>Check Out</th>
+                            <th><abbr title="Tahun - Bulan - Tanggal">Check In</abbr></th>
+                            <th><abbr title="Tahun - Bulan - Tanggal">Check Out</abbr></th>
                             <th>Tanggal Pemesanan</th>
                             <th>Status</th>
                             <th>-</th>
