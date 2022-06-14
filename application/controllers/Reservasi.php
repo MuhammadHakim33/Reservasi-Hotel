@@ -50,11 +50,11 @@ class Reservasi extends CI_Controller
 		if(($kamar_terisi + $jumlah_kamar) <= $data_kamar) 
         {
             $this->session->set_userdata('input_kamar', $input_kamar);
-            redirect(base_url('beranda/index/') . 'TRUE');
+            redirect(base_url('beranda/') . 1);
 		} 
         else 
         {
-            redirect(base_url('beranda/index/') . 'FALSE');
+            redirect(base_url('beranda/') . 0);
 		}
     }
 

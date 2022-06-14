@@ -10,7 +10,7 @@ class Beranda extends CI_Controller
 		$this->load->library('session');
 	}
 
-	public function index($result = null)
+	public function index($result = Null)
 	{
 		$data["title"] = "Beranda";
 		$data["kamar"] = $this->Model_main->get_data('tbl_kamar');

@@ -58,8 +58,6 @@
     </div>
 </div>
 
-
-
 <!-- Modal Form Reservasi -->
 <?php if($reservasi !== NULL) : ?>
 <div class="modal" tabindex="-1" id="modalFormReservasi" data-bs-backdrop="static" data-bs-keyboard="false">
@@ -70,7 +68,7 @@
                 <a href="<?= base_url('beranda') ?>" type="button" class="btn-close"></a>
             </div>
             <!-- Output Jika Kamar Tersedia -->
-            <?php if($reservasi === 'TRUE') : ?>
+            <?php if($reservasi == 1) : ?>
                 <div class="modal-body">
                     <!-- Alert -->
                     <div class="alert alert-primary text-center" role="alert">Kamar Kosong Tersedia - Pesan Sekarang !</div>
@@ -126,7 +124,7 @@
             <?php endif; ?>
 
             <!-- Output Jika Kamar Penuh -->
-            <?php if($reservasi === 'FALSE') : ?>
+            <?php if($reservasi == 0) : ?>
                 <div class="modal-body">
                     <div class="alert alert-danger text-center" role="alert">Kamar Penuh !</div>            
                 </div>
