@@ -11,12 +11,6 @@ function navActive() {
 }
 
 
-// Prin Halaman
-function printPage(){
-    window.print()
-    window.location.replace('http://localhost/reservasi-hotel/');
-}
-
 
 // Modal Bootstrap Show
 if(document.getElementById('modalFormReservasi')){

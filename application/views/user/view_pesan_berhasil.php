@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.css');?> ">
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.css');?>">
 
     <style>
         .icon {
@@ -58,34 +58,34 @@
                             <!-- Tanggal Pemesanan -->
                             <div class="col d-flex align-self-center">
                                 <p class="card-text text-muted flex-grow-1 mb-0">Tanggal Pemesanan</p>
-                                <p class="mb-0"><?= $reservasi_tamu[0]['created_at'] ?></p>
+                                <p class="mb-0"><?= $reservasi[0]['registered_at'] ?></p>
                             </div>
                             <!-- Divider -->
                             <div class="col-12"><hr></div>
                             <!-- Nama Tamu -->
                             <div class="col d-flex align-self-center">
                                 <p class="card-text text-muted flex-grow-1">Nama Tamu</p>
-                                <p><?= $reservasi_tamu[0]['nama_tamu'] ?></p>
+                                <p><?= $reservasi[0]['nama_tamu'] ?></p>
                             </div>
                             <!-- Check In -->
                             <div class="col d-flex align-self-center">
                                 <p class="card-text text-muted flex-grow-1">Check-in</p>
-                                <p><?= $reservasi_tamu[0]['check_in_kamar'] ?></p>
+                                <p><?= $reservasi[0]['check_in'] ?></p>
                             </div>
                             <!-- Check Out -->
                             <div class="col d-flex">
                                 <p class="card-text text-muted flex-grow-1">Check-out</p>
-                                <p><?= $reservasi_tamu[0]['check_out_kamar'] ?></p>
+                                <p><?= $reservasi[0]['check_out'] ?></p>
                             </div>
                             <!-- Tipe Kamar -->
                             <div class="col d-flex">
                                 <p class="card-text text-muted flex-grow-1">Tipe Kamar</p>
-                                <p><?= $reservasi_tamu[0]['nama_tipe_kamar'] ?></p>
+                                <p><?= $reservasi[0]['nama_tipe_kamar'] ?></p>
                             </div>
                             <!-- Jumlah Kamar -->
                             <div class="col d-flex">
                                 <p class="card-text text-muted flex-grow-1 mb-0">Jumlah Kamar</p>
-                                <p class="mb-0"><?= $reservasi_tamu[0]['jumlah_kamar'] ?></p>
+                                <p class="mb-0"><?= $reservasi[0]['jumlah_kamar'] ?></p>
                             </div>
                         </div>
                     </div>
@@ -110,10 +110,10 @@
                         <th>Jumlah Kamar</th>
                     </tr>
                     <tr>
-                        <td><?= $reservasi_tamu[0]['created_at'] ?></td>
+                        <td><?= $reservasi_tamu[0]['registered_at'] ?></td>
                         <td><?= $reservasi_tamu[0]['nama_tamu'] ?></td>
-                        <td><?= $reservasi_tamu[0]['check_in_kamar'] ?></td>
-                        <td><?= $reservasi_tamu[0]['check_out_kamar'] ?></td>
+                        <td><?= $reservasi_tamu[0]['check_in'] ?></td>
+                        <td><?= $reservasi_tamu[0]['check_out'] ?></td>
                         <td><?= $reservasi_tamu[0]['nama_tipe_kamar'] ?></td>
                         <td><?= $reservasi_tamu[0]['jumlah_kamar'] ?></td>
                     </tr>
@@ -121,6 +121,14 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Print Halaman
+        function printPage(){
+            window.print()
+            window.location.replace('<?= base_url()?>');
+        }
+    </script>
 
     <script src="<?= base_url('assets/js/custom.js');?> "></script>
 </body>
