@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <!-- Nama Fasilitas -->
                         <h5 class="card-title"><?= $data_fasilitas['fasilitas_hotel'] ?></h5>
-                        <p class="card-subtitle mt-2 text-muted"><?= $data_fasilitas['keterangan_fasilitas'] ?></p>
+                        <p class="card-subtitle mt-2 text-muted"><?= $data_fasilitas['desc_fasilitas_hotel'] ?></p>
                     </div>
                 </div>
             </div>
