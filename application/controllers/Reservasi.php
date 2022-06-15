@@ -88,15 +88,25 @@ class Reservasi extends CI_Controller
 		];
 		$this->Model_main->insert_data('tbl_reservasi_detail', $input_2);
 
-		$this->berhasil('view_data_reservasi', $id_reservasi);
+		$this->berhasil($id_reservasi);
 	}
 
-	public function berhasil($table, $id_reservasi) 
+	public function berhasil($id_reservasi = 28) 
 	{
 		$where = ['id' => $id_reservasi];
-		$data['reservasi'] = $this->Model_main->get_data($table, $where);
+		$data['reservasi'] = $this->Model_main->get_data('view_data_reservasi', $where);
 		$data["title"] = "Berhasil";
 		
+		$this->load->view('user/view_header', $data);
 		$this->load->view('user/view_pesan_berhasil', $data);
+		$this->load->view('user/view_footer');
+	}
+
+	public function cetak($id_reservasi) 
+	{
+		$where = ['id' => $id_reservasi];
+		$data['reservasi'] = $this->Model_main->get_data('view_data_reservasi', $where);
+
+		$this->load->view('user/view_cetak', $data);
 	}
 }

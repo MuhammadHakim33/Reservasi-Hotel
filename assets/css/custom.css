@@ -3,3 +3,13 @@
 body {
     font-family: 'Inter', sans-serif !important;
 }
+
+.icon-success {
+    height: 36px;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    border-radius: 100%;
+}

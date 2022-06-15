@@ -1,0 +1,26 @@
+.container {
+    max-width: 600px;
+    margin: 3rem auto 0;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+h4 {
+    color: green;
+    margin: .5rem 0;  
+}
+
+table {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+td, th, .header {
+    padding: .5rem;
+}
+
+.data-kamar {
+    width: 100%;
+}
+.data-kamar th {
+    border-bottom: 1px solid black;
+}
