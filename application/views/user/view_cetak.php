@@ -16,6 +16,11 @@
             <!-- Data Pemesan -->
             <table cellspacing="0" class="data-pemesan">
                 <tr>
+                    <td>Kode Reservasi</td>
+                    <td>:</td>
+                    <th><?= $reservasi[0]['kode_reservasi'] ?></th>
+                </tr>
+                <tr>
                     <td>Tanggal Reservasi</td>
                     <td>:</td>
                     <th><?= $reservasi[0]['registered_at'] ?></th>

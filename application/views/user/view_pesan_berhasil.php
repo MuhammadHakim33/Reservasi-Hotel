@@ -14,6 +14,11 @@
                     <div class="row row-cols-1 g-0">
                         <!-- Tanggal Pemesanan -->
                         <div class="col d-flex align-self-center">
+                            <p class="card-text text-muted flex-grow-1">Kode Reservasi</p>
+                            <p class="card-text"><?= $reservasi[0]['kode_reservasi'] ?></p>
+                        </div>
+                        <!-- Tanggal Pemesanan -->
+                        <div class="col d-flex align-self-center">
                             <p class="card-text text-muted flex-grow-1 mb-0">Tanggal Pemesanan</p>
                             <p class="card-text"><?= $reservasi[0]['registered_at'] ?></p>
                         </div>

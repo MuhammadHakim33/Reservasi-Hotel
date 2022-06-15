@@ -68,9 +68,11 @@ class Reservasi extends CI_Controller
 		$nama_tamu = $this->input->post('nama_tamu');
 		$email_pemesan = $this->input->post('email_pemesan');
 		$telp_pemesan = $this->input->post('telp_pemesan');
-		
+		$kode_reservasi = $this->nomor_reservasi($tipe_kamar);
+
 		// Insert tbl_reservasi
 		$input_1 = [
+			'kode_reservasi' => $kode_reservasi,
 			'nama_pemesan' => $nama_pemesan,
 			'nama_tamu' => $nama_tamu,
 			'email_pemesan' => $email_pemesan,
@@ -88,12 +90,12 @@ class Reservasi extends CI_Controller
 		];
 		$this->Model_main->insert_data('tbl_reservasi_detail', $input_2);
 
-		$this->berhasil($id_reservasi);
+		$this->berhasil($kode_reservasi);
 	}
 
-	public function berhasil($id_reservasi = 28) 
+	public function berhasil($kode_reservasi) 
 	{
-		$where = ['id' => $id_reservasi];
+		$where = ['kode_reservasi' => $kode_reservasi];
 		$data['reservasi'] = $this->Model_main->get_data('view_data_reservasi', $where);
 		$data["title"] = "Berhasil";
 		
@@ -108,5 +110,10 @@ class Reservasi extends CI_Controller
 		$data['reservasi'] = $this->Model_main->get_data('view_data_reservasi', $where);
 
 		$this->load->view('user/view_cetak', $data);
+	}
+
+	public function nomor_reservasi($id_kamar)
+	{
+		return  $id_kamar.date("Ymd").rand(100, 999);
 	}
 }
