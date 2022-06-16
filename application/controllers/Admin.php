@@ -149,7 +149,7 @@ class Admin extends CI_Controller {
 		$where = ['id' => $id];
 		$input = [
 			'fasilitas_hotel' => $fasilitas_hotel,
-			'keterangan_fasilitas' => $keterangan_fasilitas
+			'desc_fasilitas_hotel' => $keterangan_fasilitas
 		];
 
 		$this->Model_main->update_data($table, $input, $where);

@@ -159,7 +159,7 @@
     </div>
 <?php endforeach;?>
 
-<!-- Modal Edit Fasilitas KaHotelmar -->
+<!-- Modal Edit Fasilitas Hotel -->
 <?php foreach($fasilitas_hotel as $data) :?>
     <div class="modal fade" id="ModalEditFasilitasHotel<?= $data['id'] ?>" tabindex="-1" aria-labelledby="ModalEditFasilitasHotel<?= $data['id'] ?>Label" aria-hidden="true">
         <div class="modal-dialog">
@@ -179,7 +179,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="keterangan_fasilitas" class="form-label">Keterangan Fasilitas</label>
-                        <input type="text" class="form-control" id="keterangan_fasilitas" name="keterangan_fasilitas" aria-describedby="keteranganfasilitasHelp" value="<?= $data['keterangan_fasilitas'] ?>">
+                        <input type="text" class="form-control" id="keterangan_fasilitas" name="keterangan_fasilitas" aria-describedby="keteranganfasilitasHelp" value="<?= $data['desc_fasilitas_hotel'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="gambar" class="form-label">Gambar</label>
@@ -208,7 +208,7 @@
                 <!-- Input -->
                 <div class="modal-body">
                     <div class="mb-3">
-                        <img src="<?= base_url( 'assets/img/' . $data['gambar_kamar']) ?>" class="img-fluid" loading="lazy">
+                        <img src="<?= base_url( 'assets/img/uploaded/' . $data['gambar_kamar']) ?>" class="img-fluid" loading="lazy">
                     </div>
                     <div class="mb-3">
                         <label for="tipe_kamar" class="form-label">Tipe Kamar</label>
@@ -261,7 +261,7 @@
                 <!-- Input -->
                 <div class="modal-body">
                     <div class="mb-3">
-                        <img src="<?= base_url( 'assets/img/' . $data['gambar_fasilitas_hotel']) ?>" class="img-fluid" loading="lazy">
+                        <img src="<?= base_url( 'assets/img/uploaded/' . $data['gambar_fasilitas_hotel']) ?>" class="img-fluid" loading="lazy">
                     </div>
                     <div class="mb-3">
                         <label for="fasilitas_hotel" class="form-label">Fasilitas Hotel</label>
@@ -269,7 +269,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="keterangan_fasilitas" class="form-label">Keterangan Fasilitas</label>
-                        <input type="text" class="form-control" id="keterangan_fasilitas" name="keterangan_fasilitas" aria-describedby="keteranganfasilitasHelp" value="<?= $data['keterangan_fasilitas'] ?>" readonly>
+                        <input type="text" class="form-control" id="keterangan_fasilitas" name="keterangan_fasilitas" aria-describedby="keteranganfasilitasHelp" value="<?= $data['desc_fasilitas_hotel'] ?>" readonly>
                     </div>
                 </div>
             </div>
