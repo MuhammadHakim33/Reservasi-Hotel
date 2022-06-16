@@ -13,20 +13,28 @@ class Login extends CI_Controller {
     public function index()
 	{
 		// Cek Session
-		if($this->session->userdata('status')){
+		if($this->session->userdata('status'))
+		{
 			redirect(base_url('admin'));
 			die;
 		}
 
+		$data["title"] = "Login";
+		$this->load->view('staff/view_login', $data);
+	}
+
+	public function login()
+	{
 		// Form Validasi
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
-		if($this->form_validation->run() == FALSE) {
-			$data["title"] = "Login";
-			$this->load->view('staff/view_login', $data);
-
-		} else {
+		if($this->form_validation->run() == FALSE) 
+		{
+			$this->index();
+		} 
+		else 
+		{
 			// Akun Validasi
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
@@ -38,8 +46,8 @@ class Login extends CI_Controller {
 
 			$data_login = $this->Model_main->get_data("tbl_staff", $where);
 
-			if(count($data_login) > 0){
-
+			if(count($data_login) > 0)
+			{
 				$data_session = [
 					'status' => "login",
 					'nama' => $data_login[0]["nama"],
@@ -49,7 +57,9 @@ class Login extends CI_Controller {
 				$this->session->set_userdata($data_session);
 				($data_session["level"] == "administrator") ? redirect(base_url("admin")) : redirect(base_url("resepsionis"));
 				
-			} else { 
+			} 
+			else 
+			{ 
 				$this->session->set_flashdata('pesanLogin', 'Username / Password Salah');
 				redirect(base_url("login")); 
 				die;

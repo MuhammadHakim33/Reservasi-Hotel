@@ -22,7 +22,7 @@
                             </div>
                         <?php endif; ?>
 
-                        <form class="user" method="POST" action="<?= base_url('login') ?>">
+                        <form class="user" method="POST" action="<?= base_url('login/login') ?>">
                             <!-- Username -->
                             <div class="form-group mb-3">
                                 <input type="username" class="form-control form-control-user" id="username" aria-describedby="username" placeholder="Username" name="username" required>

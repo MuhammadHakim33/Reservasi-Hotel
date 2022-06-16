@@ -1,5 +1,10 @@
-
 <div class="container py-5">
+    <?php if(isset($info)): ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?= $info ?><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif; ?>
+
     <div class="card">
         <div class="card-body">
             <!-- Tabs -->
@@ -40,7 +45,7 @@
                                         <td><?= $data['nama_tipe_kamar'] ?></td>
                                         <td><?= $data['jumlah_kamar'] ?></td>
                                         <td>
-                                            <img src="<?= base_url( 'assets/img/' . $data['gambar_kamar']) ?>" class="img-fluid" loading="lazy">
+                                            <img src="<?= base_url( 'assets/img/uploaded/' . $data['gambar_kamar']) ?>" class="img-fluid" loading="lazy">
                                         </td>
                                         <td>
                                             <button type="button" class="btn btn-outline-secondary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalLihatKamar<?= $data['id'] ?>">Lihat</button>
@@ -62,7 +67,7 @@
                     Tambah Data
                     </button>
                     <!-- Table -->
-                    <div class="table-responsive- col-12">
+                    <div class="table-responsive col-12">
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -110,9 +115,9 @@
                                 <?php foreach($fasilitas_hotel as $data) :?>
                                     <tr>
                                         <td><?= $data['fasilitas_hotel'] ?></td>
-                                        <td><?= $data['keterangan_fasilitas'] ?></td>
+                                        <td><?= $data['desc_fasilitas_hotel'] ?></td>
                                         <td>
-                                            <img src="<?= base_url( 'assets/img/' . $data['gambar_fasilitas_hotel']) ?>" class="img-fluid" loading="lazy">
+                                            <img src="<?= base_url( 'assets/img/uploaded/' . $data['gambar_fasilitas_hotel']) ?>" class="img-fluid" loading="lazy">
                                         </td>
                                         <td>
                                             <button type="button" class="btn btn-outline-secondary btn-sm mb-1 mb-md-0" data-bs-toggle="modal" data-bs-target="#ModalLihatFasilitasHotel<?= $data['id'] ?>">Lihat</button>

@@ -8,7 +8,7 @@
         <?php foreach($kamar as $data) :?>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card mb-3">
-                    <img src="<?= base_url('assets/img/' . $data['gambar_kamar']) ?>" class="card-img-top" alt="..." loading="lazy">
+                    <img src="<?= base_url('assets/img/uploaded/' . $data['gambar_kamar']) ?>" class="card-img-top" alt="..." loading="lazy">
                     <div class="card-body">
                         <!-- Nama Kamar -->
                         <h5 class="card-title"><?= $data['nama_tipe_kamar'] ?></h5>
