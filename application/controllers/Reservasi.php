@@ -7,6 +7,9 @@ class Reservasi extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Model_main');
+
+		header('Cache-Control: no cache');
+		session_cache_limiter('private_no_expire');
         $this->load->library('session');
 	}
 
@@ -90,6 +93,10 @@ class Reservasi extends CI_Controller
 		];
 		$this->Model_main->insert_data('tbl_reservasi_detail', $input_2);
 
+		// Jalankan Method Send Email
+		$this->send_email($email_pemesan, $kode_reservasi);
+
+		// Jalankan Method Berhasil
 		$this->berhasil($kode_reservasi);
 	}
 
@@ -116,4 +123,28 @@ class Reservasi extends CI_Controller
 	{
 		return  $id_kamar.date("Ymd").rand(100, 999);
 	}
+
+	public function send_email($email_pemesan, $kode_reservasi)
+	{
+		$config = [
+            'mailtype'  => 'html',
+            'charset'   => 'iso-8859-1',
+            'protocol'  => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'email@gmail.com', // Masukan Email
+            'smtp_pass' => 'password', // Masukan Password
+            'smtp_port' => 465
+        ];
+
+		$this->load->library('email', $config);
+        $this->email->set_newline("\r\n");
+        $this->email->from($config['smtp_user'], 'Nama Anda');
+        $this->email->to($email_pemesan);
+        $this->email->subject('Coba Coba');
+        $this->email->message('Reservasi Dengan Kode ' . $kode_reservasi . ' Berhasil.');
+
+		// Tampilkan pesan sukses atau error
+		if (!$this->email->send()) 
+            show_error($this->email->print_debugger());
+	}	
 }
