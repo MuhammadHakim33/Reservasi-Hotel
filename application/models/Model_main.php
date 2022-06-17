@@ -45,7 +45,7 @@ class Model_main extends CI_Model
         if($keyword) 
         {
             $this->db->where('nama_tamu', $keyword['nama_tamu']);
-            $this->db->or_where('check_in_kamar', $keyword['check_in_kamar']);
+            $this->db->or_where('check_in', $keyword['check_in']);
         }
 
         $query = $this->db->get();

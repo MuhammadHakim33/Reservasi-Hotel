@@ -20,8 +20,8 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
+                            <th>Kode Reservasi</th>
                             <th>Nama Tamu</th>
-                            <th>Tipe Kamar</th>
                             <th><abbr title="Tahun - Bulan - Tanggal">Check In</abbr></th>
                             <th><abbr title="Tahun - Bulan - Tanggal">Check Out</abbr></th>
                             <th>Tanggal Pemesanan</th>
@@ -33,13 +33,13 @@
                         <?php if(count($reservasi) > 0) :?>
                             <?php foreach($reservasi as $data) :?>
                                 <tr>
+                                    <td><?= $data['kode_reservasi'] ?></td>
                                     <td><?= $data['nama_tamu'] ?></td>
-                                    <td><?= $data['nama_tipe_kamar'] ?></td>
-                                    <td><?= $data['check_in_kamar'] ?></td>
-                                    <td><?= $data['check_out_kamar'] ?></td>
-                                    <td><?= $data['created_at'] ?></td>
+                                    <td><?= $data['check_in'] ?></td>
+                                    <td><?= $data['check_out'] ?></td>
+                                    <td><?= $data['registered_at'] ?></td>
                                     <td id="badge_status">
-                                        <?php if($data['status'] != 'terkonfirmasi') :?>
+                                        <?php if($data['status_reservasi'] != 'terkonfirmasi') :?>
                                             <span class="badge bg-warning text-dark">Belum Terkonfirmasi</span>
                                         <?php else: ?>
                                             <span class="badge bg-success">Terkonfirmasi</span>
@@ -50,7 +50,8 @@
                                         <!-- Form Button Komfirmasi -->
                                         <form action="<?= base_url('resepsionis/edit_status') ?>" method="POST" class="ms-2">
                                             <input type="hidden" value="<?= $data['id'] ?>" name="id" readonly>
-                                            <?php if($data['status'] == 'terkonfirmasi' || $data['check_out_kamar'] < date('Y-m-d')) :?>
+                                            <!-- Kondisi Perubahan Button Konfirmasi -->
+                                            <?php if($data['status_reservasi'] == 'terkonfirmasi' || $data['check_out'] < date('Y-m-d')) :?>
                                                 <button type="submit" class="btn btn-outline-primary btn-sm" disabled>Konfirmasi</button>
                                             <?php else: ?>
                                                 <button type="submit" class="btn btn-outline-primary btn-sm">Konfirmasi</button>
@@ -87,16 +88,8 @@
                 <!-- Input -->
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label class="form-label">Tanggal Pemesanan</label>
-                        <input type="text" class="form-control" value="<?= $data['created_at'] ?>" readonly> 
-                    </div>
-                    <div class="mb-3">
                         <label class="form-label">Nama Pemesan</label>
                         <input type="text" class="form-control" value="<?= $data['nama_pemesan'] ?>" readonly> 
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Nama Tamu</label>
-                        <input type="text" class="form-control" value="<?= $data['nama_tamu'] ?>" readonly> 
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
@@ -109,14 +102,6 @@
                     <div class="mb-3">
                         <label class="form-label">Tipe Kamar</label>
                         <input type="text" class="form-control" value="<?= $data['nama_tipe_kamar'] ?>" readonly> 
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Check In</label>
-                        <input type="text" class="form-control" value="<?= $data['check_in_kamar'] ?>" readonly> 
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Check Out</label>
-                        <input type="text" class="form-control" value="<?= $data['check_out_kamar'] ?>" readonly> 
                     </div>
                     <div class="mb-3">
                         <label class="form-label">jumlah Kamar</label>

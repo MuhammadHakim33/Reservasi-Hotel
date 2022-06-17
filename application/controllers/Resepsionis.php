@@ -8,12 +8,14 @@ class Resepsionis extends CI_Controller {
 		$this->load->model('Model_main');
 		$this->load->library('session');
 
-		if(empty($this->session->userdata('status'))){
+		if(empty($this->session->userdata('status')))
+		{
 			redirect(base_url("login"));
 			die;
 		}
 
-		if($this->session->userdata('level') != "resepsionis") {
+		if($this->session->userdata('level') != "resepsionis") 
+		{
 			redirect(base_url("admin"));
 			die;
 		}
@@ -23,15 +25,17 @@ class Resepsionis extends CI_Controller {
 	{
 		$data["title"] = "Dashboard";
 		$data["nama"] = $this->session->userdata('nama');
-		$data["reservasi"] = $this->Model_main->get_data('data_reservasi');
-		// Funsi Search
-		if(!empty($this->input->post('nama_tamu')) || !empty($this->input->post('check_in'))) {
+		$data["reservasi"] = $this->Model_main->get_data('view_data_reservasi');
+		
+		// // Funsi Search
+		if(!empty($this->input->post('nama_tamu')) || !empty($this->input->post('check_in'))) 
+		{
 			$keyword = [
 				'nama_tamu' => $this->input->post('nama_tamu'), 
-				'check_in_kamar' => $this->input->post('check_in')
+				'check_in' => $this->input->post('check_in')
 			];
 
-			$data['reservasi'] = $this->Model_main->search_data('data_reservasi', $keyword);
+			$data['reservasi'] = $this->Model_main->search_data('view_data_reservasi', $keyword);
 		}
 
         $this->load->view('staff/view_header', $data);
