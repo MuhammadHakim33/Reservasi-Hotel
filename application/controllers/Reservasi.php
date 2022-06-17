@@ -140,7 +140,7 @@ class Reservasi extends CI_Controller
         $this->email->set_newline("\r\n");
         $this->email->from($config['smtp_user'], 'Nama Anda');
         $this->email->to($email_pemesan);
-        $this->email->subject('Coba Coba');
+        $this->email->subject('Reservasi Hotel');
         $this->email->message('Reservasi Dengan Kode ' . $kode_reservasi . ' Berhasil.');
 
 		// Tampilkan pesan sukses atau error
