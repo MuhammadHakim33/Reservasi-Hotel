@@ -1,5 +1,5 @@
 
-# About This
+# Tentang Aplikasi
 
 ![Home Page](screenshot/beranda.jpeg)
 *Homepage Guest*
@@ -12,8 +12,9 @@
 
 ------------  
 
-This is a Competency Test when i was studied in Vocational High School.  
-With this web, guests can book hotel rooms. As an admin you can add-update-delete room types, add-update-delete fasilities for each room type and for hotel. As a receptionist you can check the reservation data.
+Aplikasi ini merupakan hasil dari Ujian Kompetensi saat saya SMK. Aplikasi ini digunakan untuk memesan kamar hotel. 
+
+Sebagai tamu, bisa memesan kamar. Sebagai admin bisa menambah-mengubah-menghapus kamar, fasilitas kamar dan fasilitas hotel. Sebagai resepsionis bisa memeriksa data pemesanan.
 
 ------------  
 
@@ -26,3 +27,21 @@ With this web, guests can book hotel rooms. As an admin you can add-update-delet
 + Mysql Store Procedure
 + Mysql View
 + Exploring Bootstrap
++ Clean Code
++ Exploring Codeigniter 3
+
+------------ 
+
+# Cara Menggunakan Aplikasi
+
+### Tahap 1 Instalasi :
+1. Instal Xampp atau sejenisnya.
+2. Clone / Download project ini, lalu simpan di htdocs local.
+
+### Tahap 2 Konfigurasi :
+1. Buat database, lalu import database dengan database `db_reservasi_hotel`.
+2. Buka folder `application/config/database`, lalu ubah `database` sesuai nama database kalian.
+3. Buka folder `application/config/config`, lalu ubah `base_url` sesuai dengan url kalian.
+
+### Tahap 3 Konfigurasi Fitur Send Email
+1. Buka folder `application/controller/reservasi` cari method `send_email`, lalu ubah `stmp_user` dan `stmp_pass` dengan email dan password email kalian.
