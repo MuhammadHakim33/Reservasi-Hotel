@@ -16,7 +16,6 @@ Aplikasi ini merupakan hasil dari Ujian Kompetensi saat saya SMK. Aplikasi ini d
 
 Sebagai tamu, bisa memesan kamar. Sebagai admin bisa menambah-mengubah-menghapus kamar, fasilitas kamar dan fasilitas hotel. Sebagai resepsionis bisa memeriksa data pemesanan.
 
-------------  
 
 **Tech Stack :**
 + Codeigniter 3
@@ -30,7 +29,6 @@ Sebagai tamu, bisa memesan kamar. Sebagai admin bisa menambah-mengubah-menghapus
 + Clean Code
 + Exploring Codeigniter 3
 
------------- 
 
 # Cara Menggunakan Aplikasi
 
