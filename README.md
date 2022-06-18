@@ -43,3 +43,6 @@ Sebagai tamu, bisa memesan kamar. Sebagai admin bisa menambah-mengubah-menghapus
 
 ### Tahap 3 Konfigurasi Fitur Send Email
 1. Buka folder `application/controller/reservasi` cari method `send_email`, lalu ubah `stmp_user` dan `stmp_pass` dengan email dan password email kalian.
+
+### Tahap 4 jalankan Aplikasi
+1. ketik `http://localhost/nama-project/` pada browser kalian.
